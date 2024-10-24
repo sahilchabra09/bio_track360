@@ -18,14 +18,14 @@ export function SidebarDash() {
   const links = [
     {
       label: "Home",
-      href: "#",
+      href: "/user-dashboard",
       icon: (
         <IconHome className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "My Health",
-      href: "#",
+      href: "user-health",
       icon: (
         <IconHeart className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),

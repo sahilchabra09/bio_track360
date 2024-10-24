@@ -7,29 +7,25 @@ const healthcareExperts = [
     id: 1,
     name: "Dr. Sarah Thompson",
     designation: "Cardiologist",
-    image:
-      "https://images.unsplash.com/photo-1591233780399-4c008db73f48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZG9jdG9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    image: "/images/person1.jpg",
   },
   {
     id: 2,
     name: "John Peterson",
     designation: "Physical Therapist",
-    image:
-      "https://images.unsplash.com/photo-1519794206461-77a6fe51c446?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGh5c2ljYWwlMjB0aGVyYXBpc3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+    image: "/images/person2.jpg",
   },
   {
     id: 3,
     name: "Lisa Rodriguez",
     designation: "Nurse",
-    image:
-      "https://images.unsplash.com/photo-1573496011164-7807cbd9b71b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bnVyc2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+    image: "/images/person3.jpg",
   },
   {
     id: 4,
-    name: "Dr. Emily Johnson",
+    name: "Dr. James Bond",
     designation: "General Practitioner",
-    image:
-      "https://images.unsplash.com/photo-1590581050925-1683c485cba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGVybWF0b2xvZ2lzdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    image: "/images/person4.jpg",
   },
 ];
 
