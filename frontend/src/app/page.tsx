@@ -1,6 +1,10 @@
 "use client";
+import HealthcareExperts from "@/components/doctors";
+import Features from "@/components/Feauters";
+import Footer from "@/components/footer";
 import { HeroSection } from "@/components/hero-section";
 import { NavbarHome } from "@/components/navbar";
+import HealthcareTestimonials from "@/components/Testimoials";
 import { div } from "framer-motion/client";
 
 export default function Home() {
@@ -8,6 +12,10 @@ export default function Home() {
     <div>
       <NavbarHome />
       <HeroSection />
+      <Features />
+      <HealthcareTestimonials />
+      <HealthcareExperts />
+      <Footer />
     </div>
   );
 }
