@@ -7,6 +7,7 @@ import {
   IconStethoscope,
   IconFileAnalytics,
   IconArrowLeft,
+  IconRun,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -28,6 +29,13 @@ export function SidebarDash() {
       href: "user-health",
       icon: (
         <IconHeart className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Solo Leveling",
+      href: "user-health",
+      icon: (
+        <IconRun className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
@@ -56,7 +64,25 @@ export function SidebarDash() {
 
   function startInstantMeeting() {
     const roomName = "Room" + Math.random().toString(36).substring(2, 7);
-    const moderatorURL = `https://meet.jit.si/${roomName}#config.prejoinPageEnabled=false&userInfo.displayName=Moderator`;
+    const moderatorURL = "https://meet.jit.si/roomName#config.prejoinPageEnabled=false&userInfo.displayName=Moderator";
+    fetch("https://rehab360.pythonanywhere.com/api/doctorCall", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        "meeting_id": "roomName",
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+    // ... rest of the existing join meeting code ...
     window.open(moderatorURL, "_blank");
   }
 

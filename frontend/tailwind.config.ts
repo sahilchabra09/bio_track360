@@ -77,6 +77,7 @@ const config: Config = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
+    require('@tailwindcss/typography'),
   ],
 };
 export default config;
