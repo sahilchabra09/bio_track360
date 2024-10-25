@@ -26,14 +26,14 @@ export function SidebarDash() {
     },
     {
       label: "My Health",
-      href: "user-health",
+      href: "/user-health",
       icon: (
         <IconHeart className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "Solo Leveling",
-      href: "user-health",
+      href: "/solo-leveling",
       icon: (
         <IconRun className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
@@ -64,14 +64,15 @@ export function SidebarDash() {
 
   function startInstantMeeting() {
     const roomName = "Room" + Math.random().toString(36).substring(2, 7);
-    const moderatorURL = "https://meet.jit.si/roomName#config.prejoinPageEnabled=false&userInfo.displayName=Moderator";
+    const moderatorURL =
+      "https://meet.jit.si/roomName#config.prejoinPageEnabled=false&userInfo.displayName=Moderator";
     fetch("https://rehab360.pythonanywhere.com/api/doctorCall", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "meeting_id": "roomName",
+        meeting_id: "roomName",
       }),
     })
       .then((response) => response.json())
@@ -102,7 +103,7 @@ export function SidebarDash() {
           <div>
             <SidebarLink
               link={{
-                label: "Manu Arora",
+                label: "Sahil Chabra",
                 href: "#",
                 icon: (
                   <Image
