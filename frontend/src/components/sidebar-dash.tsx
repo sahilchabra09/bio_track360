@@ -12,10 +12,8 @@ import {
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { div } from "framer-motion/client";
 
-export function SidebarDash() {
+export function SidebarDash({ currentPath }: { currentPath: string }) {
   const links = [
     {
       label: "Home",
@@ -40,11 +38,10 @@ export function SidebarDash() {
     },
     {
       label: "Talk to Doctor",
-      href: "#",
+      href: "/talk-to-doctor",
       icon: (
         <IconStethoscope className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
-      onClick: startInstantMeeting,
     },
     {
       label: "Report anaylsis",
@@ -62,31 +59,6 @@ export function SidebarDash() {
     },
   ];
 
-  function startInstantMeeting() {
-    const roomName = "Room" + Math.random().toString(36).substring(2, 7);
-    const moderatorURL =
-      "https://meet.jit.si/roomName#config.prejoinPageEnabled=false&userInfo.displayName=Moderator";
-    fetch("https://rehab360.pythonanywhere.com/api/doctorCall", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        meeting_id: "roomName",
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-
-    // ... rest of the existing join meeting code ...
-    window.open(moderatorURL, "_blank");
-  }
-
   const [open, setOpen] = useState(false);
   return (
     <div className="h-screen">
@@ -96,7 +68,11 @@ export function SidebarDash() {
             {open ? <Logo /> : <LogoIcon />}
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
-                <SidebarLink key={idx} link={link} />
+                <SidebarLink
+                  key={idx}
+                  link={link}
+                  isActive={currentPath === link.href}
+                />
               ))}
             </div>
           </div>

@@ -12,7 +12,10 @@ function addVariablesForColors({ addBase, theme }: any) {
 }
 
 import svgToDataUri from "mini-svg-data-uri";
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette"; // Removed 'default as' for consistency
+const {
+  default: flattenColorPalette,
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config: Config = {
   content: [
