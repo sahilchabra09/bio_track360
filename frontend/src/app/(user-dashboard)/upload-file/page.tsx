@@ -1,5 +1,4 @@
 "use client";
-import { SidebarDash } from "@/components/sidebar-dash";
 import { FileUploadRep } from "@/components/upload-rep";
 import React, { useEffect } from "react";
 
