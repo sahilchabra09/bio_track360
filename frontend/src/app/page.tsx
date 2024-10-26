@@ -5,7 +5,6 @@ import Footer from "@/components/footer";
 import { HeroSection } from "@/components/hero-section";
 import { NavbarHome } from "@/components/navbar";
 import HealthcareTestimonials from "@/components/Testimoials";
-import { div } from "framer-motion/client";
 
 export default function Home() {
   return (

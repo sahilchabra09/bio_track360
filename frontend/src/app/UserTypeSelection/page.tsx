@@ -43,10 +43,12 @@ export default function UserTypeSelection() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="bg-gray-800 rounded-lg shadow-lg p-8 w-64 h-64 flex flex-col items-center justify-center mt-[150px]">
-          <IconStethoscope className="h-16 w-16 text-teal-300 mb-4" />
-          <h2 className="text-2xl font-bold text-white mb-2">I am Doctor</h2>
-        </div>
+        <Link href="/doc-dashboard">
+          <div className="bg-gray-800 rounded-lg shadow-lg p-8 w-64 h-64 flex flex-col items-center justify-center mt-[150px]">
+            <IconStethoscope className="h-16 w-16 text-teal-300 mb-4" />
+            <h2 className="text-2xl font-bold text-white mb-2">I am Doctor</h2>
+          </div>
+        </Link>
       </motion.div>
 
       {/* Patient Section */}
