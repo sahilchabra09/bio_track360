@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
 
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 
@@ -11,13 +11,8 @@ function addVariablesForColors({ addBase, theme }: any) {
   });
 }
 
-const svgToDataUri = require("mini-svg-data-uri");
- 
-const colors = require("tailwindcss/colors");
-
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import svgToDataUri from "mini-svg-data-uri";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette"; // Removed 'default as' for consistency
 
 const config: Config = {
   content: [
@@ -77,7 +72,7 @@ const config: Config = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
   ],
 };
 export default config;

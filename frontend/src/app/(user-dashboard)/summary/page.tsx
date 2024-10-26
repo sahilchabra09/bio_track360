@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useResponse } from "@/context/ResponseContext";
-import { SidebarDash } from "@/components/sidebar-dash";
 import ReactMarkdown from "react-markdown";
 
 const SummaryPage: React.FC = () => {
@@ -18,14 +17,11 @@ const SummaryPage: React.FC = () => {
   }
 
   return (
-    <div className="flex">
-      <SidebarDash />
-      <div className="flex-1 p-10">
-        <h1 className="text-3xl font-bold mb-4">Summary of your report</h1>
-        <ReactMarkdown className="prose dark:prose-invert">
-          {summaryContent}
-        </ReactMarkdown>
-      </div>
+    <div className="flex-1 p-10">
+      <h1 className="text-3xl font-bold mb-4">Summary of your report</h1>
+      <ReactMarkdown className="prose dark:prose-invert">
+        {summaryContent}
+      </ReactMarkdown>
     </div>
   );
 };

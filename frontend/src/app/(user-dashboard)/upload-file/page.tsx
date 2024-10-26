@@ -3,19 +3,16 @@ import { SidebarDash } from "@/components/sidebar-dash";
 import { FileUploadRep } from "@/components/upload-rep";
 import React, { useEffect } from "react";
 
-function uploadfile() {
+function Uploadfile() {
   useEffect(() => {
     console.log("Dashboard component rendered");
   }, []);
 
   return (
-    <div className="flex">
-      <SidebarDash />
-      <main className="flex-1 p-4">
-        <FileUploadRep />
-      </main>
-    </div>
+    <main className="flex-1 p-4">
+      <FileUploadRep />
+    </main>
   );
 }
 
-export default uploadfile;
+export default Uploadfile;
