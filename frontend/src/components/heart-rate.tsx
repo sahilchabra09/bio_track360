@@ -77,19 +77,23 @@ export default function HeartRateComponent() {
       );
       const data = await response.json();
 
-      // Adjusting temperature value
-      setTemperature(data.temperature - 3);
+      if (data.temperature) {
+        // Adjusting temperature value
+        setTemperature(data.temperature - 3);
+      }
 
       // Adding ECG data and time
       const timeNow = new Date().toLocaleTimeString();
-      setEcgData((prevEcgData) => {
-        const updatedEcgData = [...prevEcgData, ...data.ecg];
-        return updatedEcgData.slice(-140);
-      });
-      setTimeLabels((prevLabels) => {
-        const updatedLabels = [...prevLabels, timeNow];
-        return updatedLabels.slice(-140);
-      });
+      if (data.ecg) {
+        setEcgData((prevEcgData) => {
+          const updatedEcgData = [...prevEcgData, ...data.ecg];
+          return updatedEcgData.slice(-140);
+        });
+        setTimeLabels((prevLabels) => {
+          const updatedLabels = [...prevLabels, timeNow];
+          return updatedLabels.slice(-140);
+        });
+      }
     } catch (error) {
       console.error("Error fetching sensor data:", error);
     }
